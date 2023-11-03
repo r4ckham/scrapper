@@ -1,6 +1,19 @@
+# Table of content
+- [Table of content](#table-of-content)
+- [Welcome to scrapping](#welcome-to-scrapping)
+  - [Installation](#installation)
+  - [Docker (not mandatory)](#docker-not-mandatory)
+  - [Env file (.env)](#env-file-env)
+  - [Basic usage](#basic-usage)
+    - [Import all data](#import-all-data)
+    - [Import all data refreshed](#import-all-data-refreshed)
+    - [Import a data fragment](#import-a-data-fragment)
+  - [Configuring data](#configuring-data)
+
 # Welcome to scrapping
 
-> This program is to personal use only
+> [!IMPORTANT]
+> Crucial information necessary for users to succeed.
 
 ## Installation
 
