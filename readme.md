@@ -21,7 +21,7 @@
 2. Clone the project ```git clone https://github.com/r4ckham/scrapper.git```
 3. Go to the created directory ```cd scrapper```
 4. Install NPM dependencies ```npm install```
-5. Add a **.env** file to adjust at your needs
+5. Add a **.env** file and adjust at your needs ```cp .env.example .env``` [(see documentation here)](#env-file-env)
 6. Run the following command ```npm run sp:install```
 
 ## Docker (not mandatory)
@@ -105,3 +105,5 @@ please update the file located on ```config/csv.resolver.config```
 >the **first** is for **code accessor**
 >the **file** attribute is to reference the **CSV column name**
 >the **database** attribute is to reference **the column name** in database table
+
+Enjoy :rocket:
