@@ -40,9 +40,16 @@ TABLE_NAME= TABLE NAME IN YOUR DATABASE
 There is multiple strategies.
 
 ### Import all data
-> Command to import all data
+> Master command
 
-```npm run import:all```
+Run a full import
+```npm run import```
+
+Run a full import and refresh the csv file
+```npm run  import -- --file=true````
+
+Run a import for a small dataset
+```npm run  import -- --postal-code=33000````
 
 ### Import all data refreshed
 

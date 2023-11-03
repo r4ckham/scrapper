@@ -6,7 +6,7 @@
   "scripts": {
     "import:palavas": "node --no-warnings App/main.js --postal-code=34250",
     "import:palavas:refresh": "node --no-warnings App/main.js --postal-code=34250 --file=true",
-    "import:all": "node --no-warnings App/main.js",
+    "import": "node --no-warnings App/main.js",
     "import:refresh": "node --no-warnings App/main.js --file=true",
     "sp:install": "node --no-warnings App/config.js"
   },
