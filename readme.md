@@ -13,7 +13,7 @@
 # Welcome to scrapping
 
 > [!IMPORTANT]
-> Crucial information necessary for users to succeed.
+> This program is for personal use only
 
 ## Installation
 
