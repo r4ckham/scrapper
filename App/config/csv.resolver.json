@@ -1,0 +1,70 @@
+{
+    "epci": {
+        "file": "EPCI",
+        "database" : "epci"
+    },
+    "commune": {
+        "file": "Commune",
+        "database": "commune"
+    },
+    "registration": {
+        "file": "Numéro d'immatriculation",
+        "database": "registration"
+    },
+    "syndicType": {
+        "file": "Type de syndic : bénévole / professionnel / non connu",
+        "database": "syndic_type"
+    },
+    "legalRepresent": {
+        "file": "Identification du représentant légal  (raison sociale et le numéro SIRET du syndic professionnel ou Civilité/prénom/ nom du syndic bénévole ou coopératif)",
+        "database": "legal_represent"
+    },
+    "siret": {
+        "file": "Siret représentant légal (si existe)",
+        "database": "siret"
+    },
+    "ape": {
+        "file": "Siret représentant légal (si existe)",
+        "database": "ape"
+    },
+    "mandate": {
+        "file": "Mandat en cours dans la copropriété",
+        "database": "mandate"
+    },
+    "useName": {
+        "file": "Nom d’usage de la copropriété",
+        "database": "use_name"
+    },
+    "address": {
+        "file": "Adresse de référence",
+        "database" : "address"
+    },
+    "street" : {
+        "file": "Numéro et Voie (adresse de référence)",
+        "database": "street"
+    },
+    "postalCode": {
+        "file": "Code postal (adresse de référence)",
+        "database": "postal_code"
+    },
+    "creationDate": {
+        "file":  "Date du règlement de copropriété",
+        "database": "creation_date"
+    },
+    "totalLot": {
+        "file": "Nombre total de lots",
+        "database": "total_lot"
+    },
+    "workLot": {
+        "file": "Nombre total de lots à usage d’habitation, de bureaux ou de commerces",
+        "database": "work_lot"
+    },
+    "homeLot": {
+        "file": "Nombre de lots à usage d’habitation",
+        "database": "home_lot"
+    },
+    "parkingLot": {
+        "file": "Nombre de lots de stationnement",
+        "database": "parking_lot"
+    }
+}

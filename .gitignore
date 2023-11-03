@@ -1,0 +1,6 @@
+/download/*.csv
+node_modules/
+.vscode
+/volumes/mysql
+.env.local
+.env
