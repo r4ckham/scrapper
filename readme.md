@@ -9,7 +9,7 @@
 3. Go to the created directory ```cd scrapper```
 4. Install NPM dependencies ```npm install```
 5. Add a **.env** file to adjust at your needs
-6. Run the following command ```npm run sc:install```
+6. Run the following command ```npm run sp:install```
 
 ## Docker (not mandatory)
 
