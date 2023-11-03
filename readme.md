@@ -5,7 +5,7 @@
 ## Installation
 
 1. Go to the folder you want, as example ```cd ~```
-2. Clone the project ```git clone git@github.com:r4ckham/scrapper.git```
+2. Clone the project ```git clone https://github.com/r4ckham/scrapper.git```
 3. Go to the created directory ```cd scrapper```
 4. Install NPM dependencies ```npm install```
 5. Add a **.env** file to adjust at your needs
@@ -46,10 +46,10 @@ Run a full import
 ```npm run import```
 
 Run a full import and refresh the csv file
-```npm run  import -- --file=true````
+```npm run  import -- --file=true```
 
 Run a import for a small dataset
-```npm run  import -- --postal-code=33000````
+```npm run  import -- --postal-code=33000```
 
 ### Import all data refreshed
 
