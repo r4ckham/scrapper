@@ -39,7 +39,7 @@ function deleteExistingData() {
         pool.query(query, (error, result) => {
             if (!error) {
                 spinner.succeed(`Deletion finished with ${result.affectedRows}`)
-                resolve(results)
+                resolve(result)
             } else {
                 spinner.fail(`Deletion can not be processed ${error.message}`)
                 reject(error)
