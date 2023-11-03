@@ -2,13 +2,17 @@
 
 > This program is to personal use only
 
-## Installation 
+## Installation
 
-1. Go to the folder you want, as exemple ```cd ~```
+1. Go to the folder you want, as example ```cd ~```
 2. Clone the project ```git clone git@github.com:r4ckham/scrapper.git```
 3. Go to the created directory ```cd scrapper```
 4. Install NPM dependencies ```npm install```
 5. Run the following command ```npm run sc:install```
+
+## Docker (not mandatory)
+
+For docker user run ```docker compose up -d```
 
 ## Env file (.env)
 
@@ -41,7 +45,7 @@ There is multiple strategies.
 
 ### Import all data refreshed
 
-> Command to import newer data, it will erease all data and create new one
+> Command to import newer data, it will erase all data and create new one
 
 ```npm run import:refresh```
 
@@ -69,7 +73,7 @@ If someday the reference of the targeted file came to change,
 please update the file located on ```config/csv.resolver.config```
 
 
-> For exemple  property of the file:
+> For example  property of the file:
 > ```json
 >
 >"epci": {
