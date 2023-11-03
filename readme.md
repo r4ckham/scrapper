@@ -51,6 +51,10 @@ There is multiple strategies.
 
 ```npm run import:palavas```
 
+And if you want to reload the csv file :
+
+```npm run import:palavas:refresh```
+
 To import custom data, with the postal code of your choice you can run the following command :
 
 ```node --no-warnings App/main.js --postal-code=YOURPOSTALCODE```
