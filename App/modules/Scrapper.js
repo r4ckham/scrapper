@@ -15,11 +15,11 @@ async function scrapFile() {
         })
     }
 
-    const spinner = ora('Starting scrapping').start();
-
+    const spinner = ora('Starting scrapping').start()
     const browser = await puppeteer.launch({
-        headless: process.env.HEADLESS_MODE,
+        headless: process.env.HEADLESS_MODE === 'true' ? 'new' : false
     })
+
     const page = await browser.newPage()
     const downloadFolder = path.resolve(process.env.DOWNLOAD_FOLDER_TARGET)
 
@@ -32,8 +32,8 @@ async function scrapFile() {
 
     // go to url
     await page.goto(process.env.DATA_URL)
-    spinner.text = "Navigation start"
-    spinner.color = "cyan"
+    spinner.text = 'Navigation start'
+    spinner.color = 'cyan'
 
     const buttonDownloadSelector = process.env.BUTTON_DOWNLOAD_SELECTOR
     await page.waitForSelector(buttonDownloadSelector)
@@ -45,8 +45,8 @@ async function scrapFile() {
         let guids = {}
         client.on('Browser.downloadWillBegin', (event) => {
             guids[event.guid] = process.env.DOWNLOAD_FILE_TARGET
-            spinner.text = "Download Started"
-            spinner.color = "yellow"
+            spinner.text = 'Download Started'
+            spinner.color = 'yellow'
         })
 
         client.on('Browser.downloadProgress', (event) => {

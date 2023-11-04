@@ -38,7 +38,7 @@ function test() {
 
 function deleteExistingData() {
     return new Promise((resolve, reject) => {
-        const spinner = ora('Testing connection to database').start()
+        const spinner = ora('Delete existing data').start()
         spinner.color = 'red'
 
         const query = `DELETE FROM ${process.env.TABLE_NAME};`
@@ -52,7 +52,7 @@ function deleteExistingData() {
                 resolve(result)
             })
             .catch((error) => {
-                spinner.fail(`Connection failed : ${error.message}`)
+                spinner.fail(`Deletion failed : ${error.message}`)
                 reject(error)
             })
     })
@@ -60,7 +60,7 @@ function deleteExistingData() {
 
 function deleteExistingDataWithPostalCode({ postalCode }) {
     return new Promise((resolve, reject) => {
-        const spinner = ora('Testing connection to database').start()
+        const spinner = ora('Delete existing data with parameter').start()
         spinner.color = 'red'
 
         const query = `
@@ -78,7 +78,7 @@ function deleteExistingDataWithPostalCode({ postalCode }) {
                 resolve(result)
             })
             .catch((error) => {
-                spinner.fail(`Connection failed : ${error.message}`)
+                spinner.fail(`Deletion failed : ${error.message}`)
                 reject(error)
             })
     })
