@@ -5,16 +5,20 @@ import cliProgress from 'cli-progress'
 import ora from 'ora'
 import { args } from './Arguments.js'
 import csr from '../config/csv.resolver.json' assert { type: 'json' }
-import { importDataFromCsv } from './DataBases.js'
+import { insertMultipleRows } from './DataBases.js'
 import { getCsvFilePath, isCsvFileExists } from './ScrapFile.js'
+import { resolveCsvRow } from './SchemaResolver.js'
 
 function readFile() {
     return new Promise((resolve, reject) => {
-        const spinner = ora('Preparing data files').start()
-        spinner.color = 'green'
+        const spinner = ora({
+            text: 'Preparing data files',
+            color: 'yellow'
+        }).start()
 
         if (!isCsvFileExists()) {
             spinner.fail('File not found')
+            reject('file not found')
         }
 
         let totalLength = 0
@@ -34,6 +38,7 @@ function persistData(nbRows) {
     return new Promise((resolve, reject) => {
         const progress = new cliProgress.SingleBar(
             {
+                fps: 24,
                 clearOnComplete: true,
             },
             cliProgress.Presets.shades_classic
@@ -43,44 +48,43 @@ function persistData(nbRows) {
         const postalCode = args['postal-code'] ?? null
 
         let count = 0
-        fs.createReadStream(getCsvFilePath())
+        let rows = []
+        const stream = fs
+            .createReadStream(getCsvFilePath())
             .pipe(csv())
             .on('data', (row) => {
                 progress.increment()
-                if (
-                    postalCode &&
-                    Number.parseInt(row[csr.postalCode.file]) !== postalCode
-                ) {
+
+                const registration = row[csr.registration.file]
+                const rowPostalCode = Number.parseInt(row[csr.postalCode.file])
+
+                if (!registration || registration === '') {
                     return
                 }
-                count++
 
-                importDataFromCsv({
-                    address: row[csr.address.file],
-                    ape: row[csr.ape.file],
-                    commune: row[csr.commune.file],
-                    creationDate: row[csr.creationDate.file],
-                    epci: row[csr.epci.file],
-                    homeLot: row[csr.homeLot.file],
-                    legalRepresent: row[csr.legalRepresent.file],
-                    mandate: row[csr.mandate.file],
-                    parkingLot: row[csr.parkingLot.file],
-                    postalCode: row[csr.postalCode.file],
-                    registration: row[csr.registration.file],
-                    siret: row[csr.siret.file],
-                    street: row[csr.street.file],
-                    syndicType: row[csr.syndicType.file],
-                    totalLot: row[csr.totalLot.file],
-                    useName: row[csr.useName.file],
-                    workLot: row[csr.workLot.file],
-                })
+                if (postalCode && rowPostalCode !== postalCode) {
+                    return
+                }
+
+                rows.push(resolveCsvRow(row))
+
+                if (rows.length === 100) {
+                    stream.pause()
+                    insertMultipleRows(rows).finally(() => {
+                        rows = []
+                        stream.resume()
+                    })
+                }
+
+                count++
             })
             .on('end', function () {
-                progress.stop()
-                ora('Testing connection to database').succeed(
-                    `File processed with ${count} lines`
-                )
-                resolve(count)
+                insertMultipleRows(rows).finally(() => {
+                    rows = []
+                    progress.stop()
+                    ora().succeed(`${count}/${nbRows} lines processed`)
+                    resolve(count)
+                })
             })
     })
 }

@@ -1,70 +1,117 @@
 {
-    "epci": {
-        "file": "EPCI",
-        "database" : "epci"
-    },
-    "commune": {
-        "file": "Commune",
-        "database": "commune"
-    },
     "registration": {
         "file": "Numéro d'immatriculation",
-        "database": "registration"
-    },
-    "syndicType": {
-        "file": "Type de syndic : bénévole / professionnel / non connu",
-        "database": "syndic_type"
-    },
-    "legalRepresent": {
-        "file": "Identification du représentant légal  (raison sociale et le numéro SIRET du syndic professionnel ou Civilité/prénom/ nom du syndic bénévole ou coopératif)",
-        "database": "legal_represent"
-    },
-    "siret": {
-        "file": "Siret représentant légal (si existe)",
-        "database": "siret"
-    },
-    "ape": {
-        "file": "Siret représentant légal (si existe)",
-        "database": "ape"
-    },
-    "mandate": {
-        "file": "Mandat en cours dans la copropriété",
-        "database": "mandate"
-    },
-    "useName": {
-        "file": "Nom d’usage de la copropriété",
-        "database": "use_name"
-    },
-    "address": {
-        "file": "Adresse de référence",
-        "database" : "address"
-    },
-    "street" : {
-        "file": "Numéro et Voie (adresse de référence)",
-        "database": "street"
+        "database": "registration",
+        "type": "string",
+        "dataType": "varchar(255)",
+        "primary": true
     },
     "postalCode": {
         "file": "Code postal (adresse de référence)",
-        "database": "postal_code"
+        "database": "postal_code",
+        "type": "int",
+        "dataType": "int"
+    },
+    "epci": {
+        "file": "EPCI",
+        "database" : "epci",
+        "type": "string",
+        "dataType": "varchar(255)"
+    },
+    "commune": {
+        "file": "Commune",
+        "database": "commune",
+        "type": "string",
+        "dataType": "varchar(255)"
+    },
+    "syndicType": {
+        "file": "Type de syndic : bénévole / professionnel / non connu",
+        "database": "syndic_type",
+        "type": "string",
+        "dataType": "varchar(255)"
+    },
+    "legalRepresent": {
+        "file": "Identification du représentant légal  (raison sociale et le numéro SIRET du syndic professionnel ou Civilité/prénom/ nom du syndic bénévole ou coopératif)",
+        "database": "legal_represent",
+        "type": "string",
+        "dataType": "varchar(255)"
+    },
+    "siret": {
+        "file": "Siret représentant légal (si existe)",
+        "database": "siret",
+        "type": "string",
+        "dataType": "varchar(255)"
+    },
+    "ape": {
+        "file": "Siret représentant légal (si existe)",
+        "database": "ape",
+        "type": "string",
+        "dataType": "varchar(255)"
+    },
+    "mandate": {
+        "file": "Mandat en cours dans la copropriété",
+        "database": "mandate",
+        "type": "string",
+        "dataType": "varchar(255)"
+    },
+    "useName": {
+        "file": "Nom d’usage de la copropriété",
+        "database": "use_name",
+        "type": "string",
+        "dataType": "varchar(255)"
+    },
+    "address": {
+        "file": "Adresse de référence",
+        "database" : "address",
+        "type": "string",
+        "dataType": "varchar(255)"
+    },
+    "street" : {
+        "file": "Numéro et Voie (adresse de référence)",
+        "database": "street",
+        "type": "string",
+        "dataType": "varchar(255)"
     },
     "creationDate": {
         "file":  "Date du règlement de copropriété",
-        "database": "creation_date"
+        "database": "creation_date",
+        "type": "date",
+        "dataType": "date"
     },
     "totalLot": {
         "file": "Nombre total de lots",
-        "database": "total_lot"
+        "database": "total_lot",
+        "type": "int",
+        "dataType": "int"
     },
     "workLot": {
         "file": "Nombre total de lots à usage d’habitation, de bureaux ou de commerces",
-        "database": "work_lot"
+        "database": "work_lot",
+        "type": "int",
+        "dataType": "int"
     },
     "homeLot": {
         "file": "Nombre de lots à usage d’habitation",
-        "database": "home_lot"
+        "database": "home_lot",
+        "type": "int",
+        "dataType": "int"
     },
     "parkingLot": {
         "file": "Nombre de lots de stationnement",
-        "database": "parking_lot"
+        "database": "parking_lot",
+        "type": "int",
+        "dataType": "int"
+    },
+    "longitude": {
+        "file": "long",
+        "database": "longitude",
+        "type": "float",
+        "dataType": "DECIMAL(12,8)"
+    },
+    "latitude": {
+        "file": "lat",
+        "database": "latitude",
+        "type": "float",
+        "dataType": "DECIMAL(12,8)"
     }
 }

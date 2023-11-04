@@ -1,7 +1,7 @@
 import { exit } from 'node:process'
-import ora from 'ora'
-import { createTable, test } from './modules/DataBases.js'
+import { createTable, dropTable, test } from './modules/DataBases.js'
 
 await test();
+await dropTable();
 await createTable();
 exit(1);
